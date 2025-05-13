@@ -1,7 +1,6 @@
 # mcblocka
 A hip-hop infused ad blocker Chrome extension that blends privacy, control, and swagger
 
-
 # MC BLOCKA - The Hiphop-Infused Ad Blocker
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pojegfbfmnppjbmcpadhkagfdclbbipm?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/mc-blocka/pojegfbfmnppjbmcpadhkagfdclbbipm)
@@ -75,4 +74,21 @@ This project is open-source and licensed under the MIT License.
 
 ---
 
+## The Dawgs Behind the Design
+
+MC BLOCKA refers to its users as “dawgs”—a nod to hip-hop culture’s language of respect and solidarity. The bulldog avatars throughout the extension represent that community spirit. They're not just mascots; they're digital stand-ins for loyalty, focus, and presence in the online space.
+
+---
+
 MC BLOCKA... Because privacy deserves a soundtrack.
+
+## Visual Preview
+
+Here’s a look at MC BLOCKA’s visual identity and theming:
+
+![MC BLOCKA Graffiti Wall](./mcblocka.png)  
+*Ad-free browsing with rhythm.*
+
+![MC BLOCKA Bulldog Pose](./mcblocka1.png)  
+*Your browser. Your temple. Your turf.*
+
