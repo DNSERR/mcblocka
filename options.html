@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Blocka Settings</title>
+    <link rel="stylesheet" href="options.css">
+    <style>
+        /* Styles for better layout and improved UI/UX */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+
+        .options-container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .options-container {
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: fuchsia;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: orange;
+            margin-bottom: 15px;
+        }
+
+        .setting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dark-mode .setting {
+            background-color: #2e2e2e;
+        }
+
+        label {
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .dark-mode label {
+            color: #f0f0f0;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .premium-features-section {
+            margin-top: 30px;
+        }
+
+        /* Save Button */
+        .button {
+            width: 100%;
+            padding: 15px;
+            background-color: fuchsia;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: orange;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="options-container">
+        <h1>MC Blocka Settings</h1>
+
+        <!-- Enable/Disable Ad Blocker -->
+        <div class="setting">
+            <label for="adBlockEnabled">Enable Ad Blocker</label>
+            <input type="checkbox" id="adBlockEnabled">
+        </div>
+
+        <!-- Privacy Protection Toggle -->
+        <div class="setting">
+            <label for="privacyProtectionEnabled">Enable Privacy Protection (Block Trackers & Cookies)</label>
+            <input type="checkbox" id="privacyProtectionEnabled">
+        </div>
+
+        <!-- Malware & Phishing Protection Toggle -->
+        <div class="setting">
+            <label for="malwareProtectionEnabled">Enable Malware & Phishing Protection</label>
+            <input type="checkbox" id="malwareProtectionEnabled">
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <div class="setting">
+            <label for="darkModeEnabled">Enable Dark Mode</label>
+            <input type="checkbox" id="darkModeEnabled">
+        </div>
+
+        <!-- Premium Features Section -->
+        <div class="premium-features-section">
+            <h2>Premium Features</h2>
+
+            <!-- Custom Blocking Rules Toggle (Premium Only) -->
+            <div class="setting">
+                <label for="customBlockingEnabled">Enable Custom Blocking Rules</label>
+                <input type="checkbox" id="customBlockingEnabled">
+            </div>
+
+            <!-- Ad Block Statistics Section (Premium Only) -->
+            <div class="setting">
+                <label for="adBlockStatisticsEnabled">Show Ad Block Statistics Over Time</label>
+                <input type="checkbox" id="adBlockStatisticsEnabled">
+            </div>
+
+            <!-- Gamification Section (Premium Only) -->
+            <div class="setting">
+                <label for="gamificationEnabled">Enable Achievements & Gamification</label>
+                <input type="checkbox" id="gamificationEnabled">
+            </div>
+        </div>
+
+        <!-- Save Button -->
+        <button id="saveButton" class="button">Save Settings</button>
+    </div>
+
+    <script>
+        // Load current settings from chrome.storage when the DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            chrome.storage.sync.get([
+                'adBlockEnabled', 
+                'privacyProtectionEnabled', 
+                'malwareProtectionEnabled', 
+                'darkModeEnabled', 
+                'customBlockingEnabled', 
+                'adBlockStatisticsEnabled', 
+                'gamificationEnabled', 
+                'premiumUser'
+            ], (data) => {
+                document.getElementById('adBlockEnabled').checked = data.adBlockEnabled || false;
+                document.getElementById('privacyProtectionEnabled').checked = data.privacyProtectionEnabled || false;
+                document.getElementById('malwareProtectionEnabled').checked = data.malwareProtectionEnabled || false;
+                document.getElementById('darkModeEnabled').checked = data.darkModeEnabled || false;
+
+                // Apply dark mode if enabled
+                if (data.darkModeEnabled) {
+                    document.body.classList.add('dark-mode');
+                }
+
+                // Load premium features only for premium users
+                if (data.premiumUser) {
+                    document.getElementById('customBlockingEnabled').checked = data.customBlockingEnabled || false;
+                    document.getElementById('adBlockStatisticsEnabled').checked = data.adBlockStatisticsEnabled || false;
+                    document.getElementById('gamificationEnabled').checked = data.gamificationEnabled || false;
+                    document.querySelector('.premium-features-section').style.display = 'block'; // Show premium section
+                } else {
+                    document.querySelector('.premium-features-section').style.display = 'none'; // Hide premium section
+                }
+            });
+
+            // Save settings when the button is clicked
+            document.getElementById('saveButton').addEventListener('click', () => {
+                const adBlockEnabled = document.getElementById('adBlockEnabled').checked;
+                const privacyProtectionEnabled = document.getElementById('privacyProtectionEnabled').checked;
+                const malwareProtectionEnabled = document.getElementById('malwareProtectionEnabled').checked;
+                const darkModeEnabled = document.getElementById('darkModeEnabled').checked;
+
+                // Save premium settings if the user is premium
+                chrome.storage.sync.get('premiumUser', (data) => {
+                    let customBlockingEnabled = false;
+                    let adBlockStatisticsEnabled = false;
+                    let gamificationEnabled = false;
+
+                    if (data.premiumUser) {
+                        customBlockingEnabled = document.getElementById('customBlockingEnabled').checked;
+                        adBlockStatisticsEnabled = document.getElementById('adBlockStatisticsEnabled').checked;
+                        gamificationEnabled = document.getElementById('gamificationEnabled').checked;
+                    }
+
+                    chrome.storage.sync.set({
+                        adBlockEnabled, 
+                        privacyProtectionEnabled, 
+                        malwareProtectionEnabled, 
+                        darkModeEnabled,
+                        customBlockingEnabled, 
+                        adBlockStatisticsEnabled, 
+                        gamificationEnabled
+                    }, () => {
+                        alert('Settings saved successfully, playa!');
+                        if (darkModeEnabled) {
+                            document.body.classList.add('dark-mode');
+                        } else {
+                            document.body.classList.remove('dark-mode');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

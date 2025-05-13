@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Blocka</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>MC Blocka</h1>
+        </div>
+
+        <!-- Status Section -->
+        <div class="status-container" id="status">
+            Ad Blocker is ON
+        </div>
+
+        <!-- Toggle Section for Ad Blocker -->
+        <div class="toggle-section">
+            <span class="toggle-label">Ad Blocker</span>
+            <label class="switch">
+                <input type="checkbox" id="toggleSwitch" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Whitelist Section -->
+        <div class="whitelist-section">
+            <span class="toggle-label">Whitelist</span>
+            <button id="whitelistButton" class="button">Whitelist this site</button>
+        </div>
+
+        <!-- Blocklist Section -->
+        <div class="blocklist-section">
+            <span class="toggle-label">Blocklist</span>
+            <button id="blocklistButton" class="button">Block this site</button>
+        </div>
+
+        <!-- Privacy Protection Section -->
+        <div class="privacy-protection-section">
+            <span class="toggle-label">Privacy Protection</span>
+            <label class="switch">
+                <input type="checkbox" id="privacyProtectionSwitch" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Malware Protection Section -->
+        <div class="malware-protection-section">
+            <span class="toggle-label">Malware Protection</span>
+            <label class="switch">
+                <input type="checkbox" id="malwareProtectionSwitch" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Dark Mode Section -->
+        <div class="dark-mode-section">
+            <span class="toggle-label">Dark Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="darkModeSwitch">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Ad Block Stats Section -->
+        <div class="stats-section" id="adBlockStats">
+            MC Blocka saved you from 0 ads today! You've blocked 0 ads total.
+        </div>
+
+        <!-- Stripe Payment Button -->
+        <button id="stripePaymentButton" class="button">Donate and Show Some Love, Playa...</button>
+
+        <!-- Badges Preview Section -->
+        <div class="badges-preview">
+            <img src="icons/badge5.png" alt="Badge 1" class="badge locked">
+            <img src="icons/badge2.png" alt="Badge 2" class="badge locked">
+            <img src="icons/badge3.png" alt="Badge 3" class="badge locked">
+            <img src="icons/badge4.png" alt="Badge 4" class="badge locked">
+        </div>
+
+        <!-- Premium Badges Section -->
+        <div class="premium-badges-section" style="display: none;">
+            <h2>Your Premium Badges</h2>
+            <div class="badges-active">
+                <img src="icons/badge5.png" alt="Active Badge 1" class="badge active">
+                <img src="icons/badge2.png" alt="Active Badge 2" class="badge active">
+                <img src="icons/badge3.png" alt="Active Badge 3" class="badge active">
+                <img src="icons/badge4.png" alt="Active Badge 4" class="badge active">
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
+

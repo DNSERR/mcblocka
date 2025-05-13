@@ -1,0 +1,245 @@
+/* General Body Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Popup Container */
+.popup-container {
+    width: 800px;  /* Full allowed Chrome extension width */
+    height: 600px; /* Full allowed Chrome extension height */
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.popup-container.dark-mode {
+    background-color: #1e1e1e;
+    box-shadow: 0px 4px 24px rgba(255, 255, 255, 0.1);
+}
+
+/* Header Section */
+.header h1 {
+    text-align: center;
+    color: fuchsia;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Status Section */
+.status-container {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: fuchsia;  /* Ensure color stands out */
+}
+
+.status-container.dark-mode {
+    color: #ff79c6;  /* A softer pink for dark mode */
+}
+
+/* Section Layout for Toggles and Buttons */
+.toggle-section,
+.whitelist-section,
+.blocklist-section,
+.privacy-protection-section,
+.malware-protection-section,
+.dark-mode-section,
+.stats-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-section.dark-mode,
+.whitelist-section.dark-mode,
+.blocklist-section.dark-mode,
+.privacy-protection-section.dark-mode,
+.malware-protection-section.dark-mode,
+.dark-mode-section.dark-mode,
+.stats-section.dark-mode {
+    background-color: #2c2c2c;
+    box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Hover Effects */
+.toggle-section:hover,
+.whitelist-section:hover,
+.blocklist-section:hover,
+.privacy-protection-section:hover,
+.malware-protection-section:hover,
+.dark-mode-section:hover,
+.stats-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-section.dark-mode:hover,
+.whitelist-section.dark-mode:hover,
+.blocklist-section.dark-mode:hover,
+.privacy-protection-section.dark-mode:hover,
+.malware-protection-section.dark-mode:hover,
+.dark-mode-section.dark-mode:hover,
+.stats-section.dark-mode:hover {
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Labels for Toggles */
+.toggle-label {
+    font-size: 22px;
+    font-weight: bold;
+    color: fuchsia;
+}
+
+.toggle-label.dark-mode {
+    color: #ff79c6;
+}
+
+/* Toggle Switches */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: orange;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.switch.dark-mode .slider {
+    background-color: #666;
+}
+
+input:checked + .slider.dark-mode {
+    background-color: #ff79c6;
+}
+
+/* Buttons */
+.button {
+    background-color: fuchsia;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: orange;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button.dark-mode {
+    background-color: #ff79c6;
+}
+
+.button.dark-mode:hover {
+    background-color: #ffb86c;
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Ad Block Stats Section */
+.stats-section {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    color: fuchsia;
+}
+
+.stats-section.dark-mode {
+    color: #ff79c6;
+}
+
+/* Badges Preview */
+.badges-preview {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid fuchsia;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.badge.locked {
+    filter: grayscale(100%);
+}
+
+.badge:hover {
+    opacity: 1;
+}
+
+.badge.dark-mode {
+    border-color: #ff79c6;
+}
