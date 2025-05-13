@@ -2,7 +2,7 @@
 A hip-hop infused ad blocker Chrome extension that blends privacy, control, and swagger
 
 
-# MC BLOCKA — The Hiphop-Infused Ad Blocker
+# MC BLOCKA - The Hiphop-Infused Ad Blocker
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pojegfbfmnppjbmcpadhkagfdclbbipm?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/mc-blocka/pojegfbfmnppjbmcpadhkagfdclbbipm)
 
@@ -25,7 +25,7 @@ A hip-hop infused ad blocker Chrome extension that blends privacy, control, and 
   See how many ads you’ve crushed — and feel good about it.
 
 - **Badge System**  
-  Earn achievements as you block — because ad-free is a lifestyle.
+  Earn achievements as you block.
 
 - **Hip-Hop Theme and Sound Effects**  
   Browse with bold fuchsia-orange vibes, smooth dark mode, and beat-driven sound cues.
@@ -75,4 +75,4 @@ This project is open-source and licensed under the MIT License.
 
 ---
 
-MC BLOCKA — Because privacy deserves a soundtrack.
+MC BLOCKA... Because privacy deserves a soundtrack.
