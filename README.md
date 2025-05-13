@@ -69,12 +69,6 @@ Love the vibe? Support the evolution of MC BLOCKA by donating to unlock premium 
 
 ---
 
-## Feedback and Contributions
-
-Want to suggest features or help expand the project? Open an issue or submit a pull request. Contributions from developers, designers, and hip-hop fans are all welcome.
-
----
-
 ## License
 
 This project is open-source and licensed under the MIT License.
